@@ -1,0 +1,14 @@
+///===================================================
+/// PROJECT NAEM : DOWNLOAD 
+/// FUNCTIONS : DOWNLOAD FLASH
+/// AUTHOR: ryan
+/// BUILD DATE: 2013/04/10
+/// DESCRIPTIONS : 
+/// FOLDER PATH:
+///===================================================
+
+///=======1. DOWNLOAD THE FLASH============
+//ERRSTOP ON
+RST
+DELAY 50
+ITO MIN(V70) MAX(V71) REVMIN(V72) REVMAX(V73) ABS(V74) REVABS(V75) LOG(V29)

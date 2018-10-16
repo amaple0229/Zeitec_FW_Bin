@@ -1,0 +1,12 @@
+///===================================================
+/// PROJECT NAEM :  SHORT CIRCUIT TEST  
+/// FUNCTIONS : SHORT CIRCUIT TEST  
+/// AUTHOR: ryan
+/// BUILD DATE: 2013/04/10
+/// DESCRIPTIONS : 
+/// FOLDER PATH:
+///===================================================
+
+///=======SHORT CIRCUIT TEST============
+//ERRSTOP ON
+FPCSHORT MIN(V20) MAX(V21) DMIN(V22) DMAX(V23) CNT(20) LOG(V29)

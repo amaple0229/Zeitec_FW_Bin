@@ -1,0 +1,226 @@
+14:06 
+
+D:\Github\Zeitec_FW_Version\7101\Apple\Dong\6SP\1015\WorkLib_1015>cls
+
+D:\Github\Zeitec_FW_Version\7101\Apple\Dong\6SP\1015\WorkLib_1015>IF "ZET7101" == "ZET7100" goto LABEL_ZET7100_SETUP 
+
+D:\Github\Zeitec_FW_Version\7101\Apple\Dong\6SP\1015\WorkLib_1015>IF "ZET7101" == "ZET7101" goto LABEL_ZET7101_SETUP 
+
+D:\Github\Zeitec_FW_Version\7101\Apple\Dong\6SP\1015\WorkLib_1015>CALL JVER.BAT 
+找不到 D:\Github\Zeitec_FW_Version\7101\Apple\Dong\6SP\1015\WorkLib_1015\DEV\ZET7101\*.bin
+
+D:\Github\Zeitec_FW_Version\7101\Apple\Dong\6SP\1015\WorkLib_1015>cls
+
+D:\Github\Zeitec_FW_Version\7101\Apple\Dong\6SP\1015\WorkLib_1015>CALL nsetting.bat 
+複製了         1 個檔案。
+ + FEATURE_1T2R_ARCHITECTURE
+ + FEATURE_FORCE_TOUCH
+ + FEATURE_CUSTOMER_PROTOCOL
+ + FEATURE_CLUSTER_ENABLE	
+ + FEATURE_MCU_LIB_ENABLE	
+ + FEATURE_PROJECT_ZET7101	
+
+D:\Github\Zeitec_FW_Version\7101\Apple\Dong\6SP\1015\WorkLib_1015>DEL .\INC\ZetDF.h 
+找不到 D:\Github\Zeitec_FW_Version\7101\Apple\Dong\6SP\1015\WorkLib_1015\INC\ZetDF.h
+
+D:\Github\Zeitec_FW_Version\7101\Apple\Dong\6SP\1015\WorkLib_1015>COPY .\DEV\ZET7101\ZET_DEFAULT\SETUP.TXT .\SRC\SETUP.TXT 
+複製了         1 個檔案。
+
+D:\Github\Zeitec_FW_Version\7101\Apple\Dong\6SP\1015\WorkLib_1015>.\PRJ\GenXML.EXE .\SRC\ZetDF.XML .\SRC\OUT.XML	.\SRC\SETUP.TXT "ZET7100"    
+############################################
+# GENXML.EXE (V4.9) programmed by JL Juang #    
+# FOR ZET7100 Panel customization          # 
+############################################
+.\TABLE\F07653_RxSine.bin = FileSize=102, Num=49
+.\TABLE\F07653_RxCoef.bin = FileSize=198, Num=97
+.\TABLE\F07653_TxSine.bin = FileSize=395, Num=392
+.\TABLE\F07653_SgnExt.bin = FileSize=3, Num=1
+PASS: .\SRC\OUT.XML is successfully generated.
+
+#################################################
+#            Zetdf1.exe Parse Setup             #
+#################################################
+ [e] No CheckSum Span Function Enabled  
+ [d] Little Ednian 
+ [o] Set Option at last 6th Byte= 0xFF 
+ [i] Revison file : .\INC\Revision.h 
+ [j] Revison file : .\INC\SubRevision.h 
+ [n] Device name apply TP type : 1T2R-SP-CF 
+ [s] Dataflash TotalPage(128 Byte/Page)=32pages
+#################################################
+#   Data Flash (V1.8) programmed by JL Juang    #
+#################################################
+
+ZetDF.h Successfully generated
+找不到 D:\Github\Zeitec_FW_Version\7101\Apple\Dong\6SP\1015\WorkLib_1015\DEV\ZET7101\ZET_DEFAULT\ZET7101.bin
+複製了         1 個檔案。
+D:\Github\Zeitec_FW_Version\7101\Apple\Dong\6SP\1015\WorkLib_1015\ZetDF_1015.XML
+移動         1 個檔案。
+移動         1 個檔案。
+移動         1 個檔案。
+##################################################
+#                   COMPILE                      #
+##################################################
+	nCC:  I2c.o
+      1 [main] nds32le-elf-gcc 6612 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+	nCC:  Isr.o
+      1 [main] nds32le-elf-gcc 8712 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+	nCC:  SPI.o
+      1 [main] nds32le-elf-gcc 15172 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+	nCC:  Main.o
+      1 [main] nds32le-elf-gcc 11828 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+	nCC:  Customer.o
+      1 [main] nds32le-elf-gcc 13932 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+##################################################
+#                 LINK OBJECTS                   #
+##################################################
+The output file is placed ".\BIN\ZET7101.ld"
+      1 [main] nds32le-elf-ar 1284 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+nds32le-elf-ar: Nds.o: No such file or directory
+      1 [main] nds32le-elf-gcc 16212 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] nds32le-elf-objdump 17220 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] nds32le-elf-objcopy 10084 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] nds32le-elf-nm 6736 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] nds32le-elf-size 3480 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+   text (code + rodata)	   data	    bss	    dec	    hex	filename
+  40384 (39656 +    728)	   4240	  11240	  55864	   da38	ZET7101.elf
+ZET7101_PROM CheckSum Generating
+PCODE :12,1,2,6,
+ZET7101_PARA CheckSum Generating
+###########################################################################
+# BINMERGE.EXE (V0.5) --> PROGRAMMED BY JL JUANG                          #
+# USAGE : BINMerge.EXE [MAIN.BIN] [DATA.BIN] [OUTPUT.BIN] [OFFSET] [DELAY]#
+###########################################################################
+MAIN FILE = .\BIN\JOUT-CS.bin
+DATA FILE = .\PRJ\DB-CS.BIN
+OUT FILE = .\BIN\ZET7101.BIN
+OFFSET  = 0xc000
+Checksum = 0xC784
+Successfully Done.
+複製了         1 個檔案。
+##################################################
+#                   SUCCEED                      #
+##################################################
+##################################################
+#        Compile  ROM/SRAM Cost                  #
+##################################################
+Device_1T2R-SP-CF RomSize  SramSize 
+40336 11360
+
+D:\Github\Zeitec_FW_Version\7101\Apple\Dong\6SP\1015\WorkLib_1015>cls
+
+D:\Github\Zeitec_FW_Version\7101\Apple\Dong\6SP\1015\WorkLib_1015>CALL nsetting.bat 
+複製了         1 個檔案。
+ + FEATURE_1T2R_ARCHITECTURE
+ + FEATURE_CUSTOMER_PROTOCOL
+ + FEATURE_NINE_SQUARE_ENABLE	
+ + FEATURE_MCU_LIB_ENABLE	
+ + FEATURE_PROJECT_ZET7101	
+
+D:\Github\Zeitec_FW_Version\7101\Apple\Dong\6SP\1015\WorkLib_1015>DEL .\INC\ZetDF.h 
+
+D:\Github\Zeitec_FW_Version\7101\Apple\Dong\6SP\1015\WorkLib_1015>COPY .\DEV\ZET7101\ZET_DEFAULT\SETUP.TXT .\SRC\SETUP.TXT 
+複製了         1 個檔案。
+
+D:\Github\Zeitec_FW_Version\7101\Apple\Dong\6SP\1015\WorkLib_1015>.\PRJ\GenXML.EXE .\SRC\ZetDF.XML .\SRC\OUT.XML	.\SRC\SETUP.TXT "ZET7100"    
+############################################
+# GENXML.EXE (V4.9) programmed by JL Juang #    
+# FOR ZET7100 Panel customization          # 
+############################################
+.\TABLE\F07653_RxSine.bin = FileSize=102, Num=49
+.\TABLE\F07653_RxCoef.bin = FileSize=198, Num=97
+.\TABLE\F07653_TxSine.bin = FileSize=395, Num=392
+.\TABLE\F07653_SgnExt.bin = FileSize=3, Num=1
+PASS: .\SRC\OUT.XML is successfully generated.
+
+#################################################
+#            Zetdf1.exe Parse Setup             #
+#################################################
+ [e] No CheckSum Span Function Enabled  
+ [d] Little Ednian 
+ [o] Set Option at last 6th Byte= 0xFF 
+ [i] Revison file : .\INC\Revision.h 
+ [j] Revison file : .\INC\SubRevision.h 
+ [n] Device name apply TP type : 1T2R-LP-C 
+ [s] Dataflash TotalPage(128 Byte/Page)=32pages
+#################################################
+#   Data Flash (V1.8) programmed by JL Juang    #
+#################################################
+
+ZetDF.h Successfully generated
+找不到 D:\Github\Zeitec_FW_Version\7101\Apple\Dong\6SP\1015\WorkLib_1015\DEV\ZET7101\ZET_DEFAULT\ZET7101.bin
+複製了         1 個檔案。
+D:\Github\Zeitec_FW_Version\7101\Apple\Dong\6SP\1015\WorkLib_1015\ZetDF_1015.XML
+移動         1 個檔案。
+移動         1 個檔案。
+移動         1 個檔案。
+##################################################
+#                   COMPILE                      #
+##################################################
+	nCC:  I2c.o
+      1 [main] nds32le-elf-gcc 2248 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+	nCC:  Isr.o
+      1 [main] nds32le-elf-gcc 3924 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+	nCC:  SPI.o
+      1 [main] nds32le-elf-gcc 3188 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+	nCC:  Main.o
+      1 [main] nds32le-elf-gcc 9496 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+	nCC:  Customer.o
+      1 [main] nds32le-elf-gcc 16800 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+##################################################
+#                 LINK OBJECTS                   #
+##################################################
+The output file is placed ".\BIN\ZET7101.ld"
+      1 [main] nds32le-elf-ar 2816 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+nds32le-elf-ar: Nds.o: No such file or directory
+      1 [main] nds32le-elf-gcc 4128 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] nds32le-elf-objdump 9420 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] nds32le-elf-objcopy 11092 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] nds32le-elf-nm 16172 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] nds32le-elf-size 14688 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+   text (code + rodata)	   data	    bss	    dec	    hex	filename
+  37624 (36928 +    696)	   4184	  11240	  53048	   cf38	ZET7101.elf
+ZET7101_PROM CheckSum Generating
+PCODE :12,1,2,6,
+ZET7101_PARA CheckSum Generating
+###########################################################################
+# BINMERGE.EXE (V0.5) --> PROGRAMMED BY JL JUANG                          #
+# USAGE : BINMerge.EXE [MAIN.BIN] [DATA.BIN] [OUTPUT.BIN] [OFFSET] [DELAY]#
+###########################################################################
+MAIN FILE = .\BIN\JOUT-CS.bin
+DATA FILE = .\PRJ\DB-CS.BIN
+OUT FILE = .\BIN\ZET7101.BIN
+OFFSET  = 0xc000
+Checksum = 0x17F6
+Successfully Done.
+複製了         1 個檔案。
+##################################################
+#                   SUCCEED                      #
+##################################################
+##################################################
+#        Compile  ROM/SRAM Cost                  #
+##################################################
+Device_1T2R-LP-C RomSize  SramSize 
+37576 11304

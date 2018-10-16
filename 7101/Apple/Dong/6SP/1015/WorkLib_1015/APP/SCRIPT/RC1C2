@@ -1,0 +1,168 @@
+///----------------------------------------------------///
+/// FW ver : ZET7100 v112 above
+/// Pleaze put this file in the same dir of zetouc.exe
+/// Open Zetouch.exe & swithch to "S" console
+/// key in : RUN RC1C2
+/// the result of  C1-AD,C2-AD will generate in 
+/// LOG/C1.TXT & LOG/C2.TXT
+///----------------------------------------------------///
+
+///SILENT ON
+///----------------------------------------------------///
+/// Set total Get Data Round
+///----------------------------------------------------///
+EXPR V9 = 1
+
+
+
+
+
+///XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX///
+/// Main script Start
+///XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX///
+
+///---------------------///
+/// initial
+///---------------------///
+ERRSTOP OFF
+ClearBuf Data(0Xff)
+
+///---------------------///
+/// Rest IC
+///---------------------///
+RST
+DELAY 100
+
+///---------------------///
+/// B2 COMMAND QUERY info
+///---------------------///
+B2
+EXPR V0 = B[13]
+EXPR V1 = B[14]
+
+///---------------------///
+/// C1-03 COMMAND QUERY info
+///---------------------///
+EXPR B[0]=0xC1
+EXPR B[1]=0x03
+EXPR B[2]=0x00
+EXPR B[3]=0x00
+EXPR B[4]=0x00
+EXPR B[5]=0x00
+EXPR B[6]=0x00
+EXPR B[7]=0x00
+EXPR B[8]=0x00
+EXPR B[9]=0x00
+Z2CW 10
+
+LOOPSTART 3000
+	Z2CGG 0x30	
+	EXPR V6 = B[0]
+	IF B[0]== 0
+		BREAK
+	ENDIF
+LOOPEND
+
+Z2CR 2
+EXPR V10 = B[0]+  B[1]*255
+
+///---------------------///
+/// C1-04 COMMAND QUERy info
+///---------------------///
+EXPR B[0]=0xC1
+EXPR B[1]=0x04
+EXPR B[2]=0x00
+EXPR B[3]=0x00
+EXPR B[4]=0x00
+EXPR B[5]=0x00
+EXPR B[6]=0x00
+EXPR B[7]=0x00
+EXPR B[8]=0x00
+EXPR B[9]=0x00
+Z2CW 10
+
+LOOPSTART 3000
+	Z2CGG 0x30	
+	EXPR V6 = B[0]
+	IF B[0]== 0
+		BREAK
+	ENDIF
+LOOPEND
+
+Z2CR V10
+
+EXPR V2 = B[0]
+EXPR V3 = B[1]
+
+EXPR V5 = ((V0 * V1) + (V2 * V3))*2
+
+///---------------------///
+/// log file delete
+///---------------------///
+DEL LOG\C1.TXT
+DEL LOG\C2.TXT
+
+
+///---------------------///
+/// Get data round Loop
+///---------------------///
+LOOPSTART V9
+  ClearBuf Data(0Xff)
+	///---------------------///
+	/// Wait INT low
+	///---------------------///
+	LOOPSTART 3000
+		Z2CGG 0x30	
+		EXPR V6 = B[0]
+		IF B[0]== 0
+			BREAK
+		ENDIF
+	LOOPEND
+	
+	///---------------------///
+	/// I2C Read
+	///---------------------///
+	Z2CR V5
+	
+	EXPR V6 =0
+	EXPR V7 =0
+	EXPR V8 =0
+	
+	LOOPSTART V1
+		LOOPSTART V0
+	    EXPR V7 = B[V6];
+	    EXPR V6 = V6 + 1
+	    EXPR V8 = B[V6]; 
+	    EXPR V8 = V8*255 + V7
+			LOG FILE(C1.txt) V8 DEC		
+			EXPR V6 = V6 + 1	
+		LOOPEND
+		LOG FILE(C1.txt) [N]	
+	LOOPEND
+	
+	
+	LOOPSTART V3
+		LOOPSTART V2
+	    EXPR V7 = B[V6];
+	    EXPR V6 = V6 + 1
+	    EXPR V8 = B[V6]; 
+	    EXPR V8 = V8*255 + V7
+			LOG FILE(C2.txt) V8 DEC		
+			EXPR V6 = V6 + 1	
+		LOOPEND
+		LOG FILE(C2.txt) [N]	
+	LOOPEND
+
+LOG FILE(C1.txt) [N]	
+LOG FILE(C2.txt) [N]	
+
+
+LOOPEND
+
+
+SILENT OFF
+
+///----------------------------------------------------///
+/// Job complete !!!!
+/// PLEAZE CHECK LOG/C1.TXT & LOG/C2.TXT
+///----------------------------------------------------///

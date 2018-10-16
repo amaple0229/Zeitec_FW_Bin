@@ -1,0 +1,11 @@
+///===================================================
+/// PROJECT NAEM : OPEN CIRCUIT TEST 
+/// FUNCTIONS : OPEN CIRCUIT TEST
+/// AUTHOR: ryan
+/// BUILD DATE: 2013/04/10
+/// DESCRIPTIONS : 
+/// FOLDER PATH:
+///===================================================
+
+///=======OPEN CIRCUIT TEST============
+OPENC FILE(S[4]) MIN(V61) MAX(V62) 1ST(V63) 2ND(V64) LOG(V29) NOB2

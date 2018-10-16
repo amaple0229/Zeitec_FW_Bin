@@ -1,0 +1,56 @@
+///===================================================
+/// PROJECT NAEM : GEN
+/// FUNCTIONS : 
+/// AUTHOR: JL
+/// BUILD DATE: 2013/04/10
+/// DESCRIPTIONS : 
+/// FOLDER PATH:
+///===================================================
+RUN INIT
+RUN SETTING
+
+RST
+DELAY 300
+SETIC
+
+///----------------------------------------///
+/// FLASH
+///----------------------------------------///
+
+MPSTR STEP1: Generate Flash
+FLASHR FILE(OUT.BIN) ALL
+MV OUT.BIN .\DOWNLOAD\OUT.BIN
+RST
+DELAY 150
+
+///----------------------------------------///
+/// INFO
+///----------------------------------------///
+
+MPSTR STEP2: Generate Information
+INFO
+SAVEBUF FILE(B2.BIN) SIZE(17) ADDR(0)
+MV B2.BIN .\INFO\B2.BIN
+RST
+DELAY 150
+ 
+///----------------------------------------///
+/// OPEN CIRCUIT
+///----------------------------------------///
+MPSTR STEP3: Generate Open circuit
+OPENC GEN(OPEN.TXT) 1ST(V63) 2ND(V64)
+MV OPEN.TXT .\OPEN\OPEN.TXT
+RST
+DELAY 150
+
+///----------------------------------------///
+/// ITO3
+///----------------------------------------///
+MPSTR STEP4: Generate PN detal sensor 
+ITO3 GEN(ITO3.TXT) MIN(V30) MAX(V31) REVMIN(V36) REVMAX(V37) DELTA(V32) ERRCNT(V38) 1ST(V39) 2ND(V40) DECIMA(V41) DIFREQ(V42) AFECLK(V43) ADCCLK(V44) BYPASS(V50) NOB2
+//ITO3 GEN(ITO3.TXT) AVGBASE(V33) GENTH1(V34) GENTH2(V35) 1ST(V39) 2ND(V40) DECIMA(V41) DIFREQ(V42) AFECLK(V43) ADCCLK(V44) BYPASS(V50)
+MV ITO3.TXT .\ITO3\ITO3.TXT
+RST
+DELAY 150
+
+MPSTR Generate Sample Pass

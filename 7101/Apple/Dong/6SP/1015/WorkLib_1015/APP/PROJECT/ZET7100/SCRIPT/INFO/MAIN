@@ -1,0 +1,19 @@
+///===================================================
+/// PROJECT NAEM : INFO MAIN
+/// FUNCTIONS : CHECK THE INFO (B2 command)
+/// AUTHOR: ryan
+/// BUILD DATE: 2013/04/10
+/// DESCRIPTIONS : 
+/// FOLDER PATH:
+///===================================================
+
+RST
+DELAY 150
+CLEARBUF 0xFF
+LOADBUF FILE(S[2]) SIZE(17)
+MOVEBUF ADDR1(0x00) ADDR2(0x20) LEN(17)
+
+INFO
+
+CMPBUF ADDR1(0x00) ADDR2(0x20) LEN(17) CHKZERO
+

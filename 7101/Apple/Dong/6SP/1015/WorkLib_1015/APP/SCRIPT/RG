@@ -1,0 +1,55 @@
+RST 
+DELAY 201
+ERRSTOP OFF
+///---------------------///
+/// C1-03 COMMAND QUERY info
+///---------------------///
+EXPR B[0]=0xC1
+EXPR B[1]=0x05
+EXPR B[2]=0x00
+EXPR B[3]=0x00
+EXPR B[4]=0x00
+EXPR B[5]=0x00
+EXPR B[6]=0x00
+EXPR B[7]=0x00
+EXPR B[8]=0x00
+EXPR B[9]=0x00
+Z2CW 10
+DELAY 50 
+
+DELAY 50
+ClearBuf Data(0Xff)
+ADDRR 0x8000 9
+
+DEL LOG\REG.TXT
+
+LOG FILE(REG.txt) ADDRW 0x8000 B[0]
+LOG FILE(REG.txt) [N]	
+
+LOG FILE(REG.txt) ADDRW 0x8001 B[1]
+LOG FILE(REG.txt) [N]	
+
+LOG FILE(REG.txt) ADDRW 0x8002 B[2]
+LOG FILE(REG.txt) [N]	
+
+LOG FILE(REG.txt) ADDRW 0x8003 B[3]
+LOG FILE(REG.txt) [N]	
+
+LOG FILE(REG.txt) ADDRW 0x8004 B[4]
+LOG FILE(REG.txt) [N]	
+
+LOG FILE(REG.txt) ADDRW 0x8005 B[5]
+LOG FILE(REG.txt) [N]	
+
+LOG FILE(REG.txt) ADDRW 0x8006 B[6]
+LOG FILE(REG.txt) [N]	
+
+LOG FILE(REG.txt) ADDRW 0x8007 B[7]
+LOG FILE(REG.txt) [N]	
+
+LOG FILE(REG.txt) ADDRW 0x8008 B[8]
+LOG FILE(REG.txt) [N]	
+
+
+
+

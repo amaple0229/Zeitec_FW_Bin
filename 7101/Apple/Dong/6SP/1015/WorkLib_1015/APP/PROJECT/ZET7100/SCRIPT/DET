@@ -1,0 +1,34 @@
+///===================================================
+/// PROJECT NAEM : ALL
+/// FUNCTIONS : 
+/// AUTHOR: ryan
+/// BUILD DATE: 2013/04/10
+/// DESCRIPTIONS : 
+/// FOLDER PATH:
+///===================================================
+
+ERRSTOP OFF
+//SILENT ON
+LOOPSTART (99:0:0)
+	CLEARBUF 00
+	START HID(V126)
+	RST
+	CODEOPTION	
+	IF B[14] != 0x7D 
+	  CLEARBUF 00
+		SFRR		
+		IF B[14] == 0x7D 
+			BREAK
+		ENDIF	
+		IF B[14] == 0x3D 
+			BREAK
+		ENDIF	
+	ENDIF
+	DELAY 50
+LOOPEND
+
+SILENT OFF
+ERRSTOP ON
+
+MPSTR IC DETECT
+

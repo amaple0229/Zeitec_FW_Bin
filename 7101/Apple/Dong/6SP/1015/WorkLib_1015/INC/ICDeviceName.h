@@ -1,0 +1,1 @@
+#define ICDEVICENAME "1T2R-LP-C" 

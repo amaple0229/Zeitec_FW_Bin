@@ -1,0 +1,27 @@
+; USER_SECTIONS .vector
+SECTION 0x00000000 ; address base 0x00000000, max_size=8M
+{	
+	PROG_ROM 0x00000000 0x00010000
+	{				
+		VAR _ILM_BASE = 0x00000000 ; 
+		VAR _DLM_BASE = 0x00100040 ;	
+		VAR _ILM_SIZE = 0x00010000 ; 40Kb
+		VAR _DLM_SIZE = 0x00003FC0 ; 16Kb	- 64Byte
+		* (+ISR, +RO)		
+	}	
+	MEM 0x100040 0x00003FC0
+	{
+		LOADADDR __data_lmastart
+		ADDR __data_start
+    . = ALIGN (4)
+    *( .data, .data1)
+		* (+RW)
+		ADDR _edata
+		LOADADDR _lmaend
+		ADDR __bss_start
+		* (+ZI)
+		ADDR _end
+    STACK = 0x104000
+	}
+	
+}

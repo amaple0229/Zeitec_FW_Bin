@@ -1,0 +1,15 @@
+/// 0x8000  ToneA mul
+/// 0x8001  ToneB mul
+/// 0x8002  [4:0]:PnChip num ; [7]:Dual Tone enable
+/// 0x8003  [6:4]:FrontEnd Gain = 0~7 (Small -> Big)
+/// 0x8004  [6:4]:LpFilter Gain = 0~7 (Small -> Big)
+/// 0x8005  [4  ]:0=Buffer Mode,1:Scaleing Mode
+/// 0x8006  [0  ]:ChargePump 1:Enable , 0:Disable
+
+ADDRW 0x8000 0x07 
+ADDRW 0x8001 0x09 
+ADDRW 0x8002 0x07 
+ADDRW 0x8003 0x00 
+ADDRW 0x8004 0x02 
+ADDRW 0x8005 0x00 
+ADDRW 0x8006 0x00

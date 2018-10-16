@@ -1,0 +1,45 @@
+RST
+DELAY 250
+
+ClearBuf Data(0xAA)
+
+EXPR B[0]=0xC1
+EXPR B[1]=0x02
+EXPR B[2]=0x01
+EXPR B[3]=0x55
+EXPR B[4]=0xAA
+EXPR B[5]=0x00
+EXPR B[6]=0x00
+EXPR B[7]=0x00
+EXPR B[8]=0x00
+EXPR B[9]=0x00
+Z2CW 10
+
+
+///---------------------///
+/// Wait INT low
+///---------------------///
+LOOPSTART 5
+	LOOPSTART 3000
+		Z2CGG 0x30	
+		EXPR V3 = B[0]
+		IF B[0]== 0
+			BREAK
+		ENDIF
+	LOOPEND
+	
+	//Z2CR 598
+	Z2CR 64
+	Z2CR 64
+	Z2CR 64
+	Z2CR 64
+	Z2CR 64
+	Z2CR 64
+	Z2CR 64
+	Z2CR 64
+	Z2CR 64
+	Z2CR 22
+LOOPEND
+
+
+DELAY 30

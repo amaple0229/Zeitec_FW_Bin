@@ -1,0 +1,11 @@
+///===================================================
+/// PROJECT NAEM : DOWNLOAD 
+/// FUNCTIONS : DOWNLOAD FLASH
+/// AUTHOR: ryan
+/// BUILD DATE: 2013/04/10
+/// DESCRIPTIONS : 
+/// FOLDER PATH:
+///===================================================
+
+///=======1. DOWNLOAD THE FLASH============
+ITO3 FILE(S[3]) MIN(V30) MAX(V31) REVMIN(V36) REVMAX(V37) DELTA(V32) ERRCNT(V38) 1ST(V39) 2ND(V40) DECIMA(V41) DIFREQ(V42) AFECLK(V43) ADCCLK(V44) LOG(V29) BYPASS(V50) NOB2

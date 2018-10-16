@@ -1,0 +1,48 @@
+///===================================================
+/// PROJECT NAEM : ALL
+/// FUNCTIONS : 
+/// AUTHOR: ryan
+/// BUILD DATE: 2013/04/10
+/// DESCRIPTIONS : 
+/// FOLDER PATH:
+///===================================================
+
+BEEP OFF
+ERRSTOP ON
+TMRSTART
+///======= 0. SETTING RUNNING IC TYPE ===========
+RUN INIT
+RUN SETTING
+
+///=======1. DOWNLOAD THE FLASH============
+MPSTR STEP1: DOWNLOAD flash
+RUN DOWNLOAD\MAIN
+
+
+///======= 2. CHECK THE B2 INFORMATION  =========
+MPSTR STEP2: INFORMATION CHECK
+RUN INFO\MAIN
+
+///======= 3. CHECK THE SHORT CIRCUIT (ZETouch ICON="R")  =========
+MPSTR STEP3: SHORT CIRCUIT CHECK
+RUN SHORT\MAIN
+
+
+///======= 4. CHECK THE OPEN CIRCUIT (ZETouch ICON="N") =========
+MPSTR STEP4: OPEN CIRCUIT CHECK
+RUN OPEN\MAIN
+
+///======= 5.CHECK PN DETAL SENSOR (ZETouch ICON="O"))=================
+MPSTR STEP5: PN DETAL SENSOR CHECK
+RUN ITO3\MAIN
+
+///======= 6.CHECK ITO (ZETouch ICON="I") =================
+MPSTR STEP6: ITO CHECK
+RUN ITO\MAIN
+
+TMRSTOP
+///======= 5. Get time =================
+MPSTR TOTAL TIME : F[0]
+
+MPSTR PASS
+

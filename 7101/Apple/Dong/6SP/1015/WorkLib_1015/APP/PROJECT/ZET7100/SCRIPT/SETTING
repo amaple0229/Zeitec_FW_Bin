@@ -1,0 +1,133 @@
+///===================================================
+/// PROJECT NAEM : SETTING
+/// FUNCTIONS : INITIAL THE MP
+/// AUTHOR: ryan
+/// BUILD DATE: 2013/04/10
+/// DESCRIPTIONS : 
+/// FOLDER PATH:
+///===================================================
+
+///===========================================================///
+/// I: Normal Setting
+///===========================================================///
+
+///-----------------------------------------------------------///
+/// 1.Setting ito sensor log folder 
+///-----------------------------------------------------------///
+//  0 : print all ITO sensor data to log folder  
+//	1 : not print all ITO sensor data to log folder  
+EXPR V29 = 0
+
+///-----------------------------------------------------------///
+/// 2.Setting ITO3 FILE PATH AND NAME (ZETouch ICON="O")
+///-----------------------------------------------------------///
+/// Min BOUND // 正向下限值
+EXPR V30 = 0.95
+
+/// Max BOUND //正向上限值
+EXPR V31 = 1.2
+
+/// reverse Min bound //反向下限值
+EXPR V36 = 0.95
+
+/// reverse Max bound //反向上限值
+EXPR V37 = 1.2
+
+/// delta ratio setting value //差值
+EXPR V32 = 0.2
+
+/// Fault Tolerance point count  //容許誤差點個數
+EXPR V38 = 4
+
+/// first level setting  //第一次設定值
+EXPR V39 = 5
+
+/// Second level setting  //第二次設定值
+EXPR V40 = 2
+
+/// Decimation Ratio setting  //訊號取樣數
+EXPR V41 = 4
+
+/// Digital Filter Freq setting  //數位率波器速度
+EXPR V42 = 3
+
+/// Front End Clk Div setting  // 發射驅動頻率
+EXPR V43 = 5
+
+/// ADC Clk Div setting  // AD轉換速度
+EXPR V44 = 3
+
+/// only the ZET6231 can used  //反向不測試
+/// 0 : scan the reverse ITO3 sensor data
+/// 1 : bypass the scan the reverse ITO3 sensor data
+EXPR V50 = 0    
+
+
+
+///---------------------------------------///
+/// Gen Golden Sample parameters
+///---------------------------------------///
+/// GAIN for un-perfect points
+EXPR V33 = 10.0
+
+/// A Golden Sample shall have 90% perfect points
+EXPR V34 = 50
+
+/// A Golden Sample shall have less 40 un-perfect points
+EXPR V35 = 100
+
+
+
+///-----------------------------------------------------------///
+/// 3.Setting FPC SHORT TEST (ZETouch ICON="R")
+///-----------------------------------------------------------///
+
+/// SENSOR MIN BOUND //感應軸下限值
+EXPR V20 = 20000
+
+/// SENSOR MAX BOUND //感應軸上限值
+EXPR V21 = 60000
+
+/// DRIVING MIN BOUND //驅動軸下限值
+EXPR V22 = 20000
+
+/// DRIVING MAX BOUND //驅動軸上限值
+EXPR V23 = 60000
+
+
+///-----------------------------------------------------------///
+/// 4.Setting Open2 circuit TEST (ZETouch ICON="N")
+///-----------------------------------------------------------///
+///  MIN BOUND  //下限值
+EXPR V61 = 0.8
+
+///  MAX BOUND //上限值
+EXPR V62 = 1.2
+
+/// 1st level //第一次設定值
+EXPR V63 = 2
+
+/// 2nd level//第二次設定值
+EXPR V64 = 1
+
+
+///-----------------------------------------------------------///
+/// 2.Setting ITO FILE PATH AND NAME (ZETouch ICON="I")
+///-----------------------------------------------------------///
+/// Min BOUND // 正向下限值
+EXPR V70 = 10000
+
+/// Max BOUND //正向上限值
+EXPR V71 = 30000
+
+/// reverse Min bound //反向下限值
+EXPR V72 = 10000
+
+/// reverse Max bound //反向上限值
+EXPR V73 = 30000
+
+/// delta ratio setting value //正向差值(ABS)
+EXPR V74 = 6000
+
+/// Fault Tolerance point count  //反向差值(ABS)
+EXPR V75 = 6000

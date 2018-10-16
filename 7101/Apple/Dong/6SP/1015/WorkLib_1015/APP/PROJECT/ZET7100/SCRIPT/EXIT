@@ -1,0 +1,23 @@
+///===================================================
+/// PROJECT NAEM : ALL
+/// FUNCTIONS : 
+/// AUTHOR: ryan
+/// BUILD DATE: 2013/04/10
+/// DESCRIPTIONS : 
+/// FOLDER PATH:
+///===================================================
+ERRSTOP OFF
+ERRCNT 0
+LOOPSTART (99:00:00)
+  START HID(V126)
+	RST
+	DELAY 10
+	INFO 3	
+	IF V127 > 1
+		BREAK
+	ENDIF	
+	DELAY 50
+LOOPEND
+
+ERRSTOP ON
+

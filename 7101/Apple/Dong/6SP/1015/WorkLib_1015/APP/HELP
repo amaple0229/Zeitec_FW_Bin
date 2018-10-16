@@ -1,0 +1,1143 @@
+#-----------------------------------------------------------------------#
+@AUTOCOMPLETE
+USAGE:  Press the tab key
+the NeoAFT will report you a most matched command
+#-----------------------------------------------------------------------#
+@BREAK
+USAGE:  BREAK
+Break the loop
+EX:
+expr v1 = 0
+loopstart 300
+  expr v1=v1+1
+  if v1 = 5
+    break
+  endif
+loopend
+expr v1
+// NOTE:  the v1 shall be 5
+#-----------------------------------------------------------------------#
+@B2
+@INFO
+USAGE:  B2
+read back the touch panel information
+EX : 
+    B2
+#-----------------------------------------------------------------------#
+@BUSRATEM
+USAGE: BUSRATE SMB/I2C RATE(%Num) HS
+HS: Choose high speed or normal speed
+Range is from 0~35, speed is from 150K~15K
+change the Silicon_LAB EVM board speed,default speed is SMBUS:102K
+Ex. BUSRATE RATE(1)
+Ex. BUSRATE SMB RATE(10)
+->Bus Mode= SMBus
+->Value=20, Bus_Rate=25K
+#-----------------------------------------------------------------------#
+@BEEP
+USAGE: BEEP [ON|OFF]
+Turn on/off beep
+#-----------------------------------------------------------------------#
+@CLEARBUF
+USAGE:  CLEARBUF
+Clear all the buffer to 0x00
+#-----------------------------------------------------------------------#
+@CMDLOG
+USAGE:  CMDLOG [ON|OFF][FILE(%filename%)]
+ON   -> Set the command log on
+OFF   -> Set the command log off
+FILE(%filename%) -> Log the command to a file
+#-----------------------------------------------------------------------#
+@CHDIR
+@CD
+USAGE:  CHDIR PATH
+PATH -> The new working directory
+Change the working directionary.
+EX:
+CHDIR C:\TEST
+CHDIR D:\AFT\NT19410
+#-----------------------------------------------------------------------#
+@DW
+@DW1
+@DW2
+@DW3
+USAGE:  DW B[%value%]
+get the dword size data to dword arrary
+EX:
+DW
+DW 1231244
+DW B[0]
+#-----------------------------------------------------------------------#
+@GETHIDID
+@HIDID
+USAGE: GETHIDID , HIDID
+Get the HID ID default the HID ID will copy to DW[63]
+#-----------------------------------------------------------------------#
+@GETDIR
+USAGE: GETDIR
+Get the NeoAFT current path
+#-----------------------------------------------------------------------#
+@GETDFOFFSET
+USAGE: GETDFOFFSET [%name%]
+[name] :  this is xml abbreviation name
+ex:
+GETDFOFFSET CYCCNT
+#-----------------------------------------------------------------------#
+@GETDEVUID
+USAGE: GETDEVUID
+get the device uid string will put on the buffer[0] 
+then use the "SPRT" to get string
+ex:
+GETDFOFFSET
+SPRT "%s" b[0]
+#-----------------------------------------------------------------------#
+@GETLASTERR
+USAGE: GETLASTERR
+Get the NeoAFT run script last err code
+ERRCNT 0 => clean the last err code
+GETLASTERR => get last err code
+#-----------------------------------------------------------------------#
+@COPYBUF
+USAGE:  COPYBUF [ADDR1(#)][ADDR2(#)][LEN(#)]
+ADDR1: Start address of source data to be copied.
+ADDR2: Start address of destination.
+LEN: The number of byte to be copied.
+Copy the buffer data to the other buffer address
+#-----------------------------------------------------------------------#
+@CMPBUF
+USAGE:  CMPBUF ADDR1(#)ADDR2(#)LEN(#)[FILE(%filename%)][FILEID(#)] [CHKZERO][APPEND] [DIFF(%Var%)][SRCADDR(%Var%)]
+ADDR1: Start address of block 1 to be compared.
+ADDR2: Start address of block 2 to be compared.
+LEN : The number of byte to be compared.
+FILE : If any different data exists, the information will be recorded in the file with this name.
+      If no filename is typed, the default name "bufCmpLog.txt" will be used.
+FILEID : append the file back
+CHKZERO : If "CMPBUF" is executed with this parameter and the comparison result is unequal, then:
+         1. NeoAFT will directly return an error message.
+         2. No log file is generated.
+APPEND : If "APPEND" executed with this parameter and the comparison result is unequal, then:
+				1. NeoAFT will keep last file compare data
+				2. generated new file
+DIFF : compare differ count save to variable or buffer
+SRCADDR : 1. input this argument is used differ data address list
+          2. not this argument is used differ data index list
+Compare the value of the buffer
+#-----------------------------------------------------------------------#
+@CLEARFERR
+USAGE: CLEARFERR
+Vender SBS command (0xED)
+Clear the error status of flash (Set error count=0, error code=0 and error addr=0)
+#-----------------------------------------------------------------------#
+@CMPSDATA
+USAGE: CMPSDATA
+Vender SBS command (0xE8)
+It compares SRAM data at addr[0x600] ~ addr[0x6ff] with that at addr[0x700] ~ addr[0x7ff].
+It returns 0xaa if the comparison result is identical, otherwise returns 0xbb.
+#-----------------------------------------------------------------------#
+@CLOSE
+USAGE: CLOSE
+Close the communiation
+#-----------------------------------------------------------------------#
+@CLRLTDH
+USAGE: CLRLTDH
+Vender SBS command (0x91)
+Clear the life time data historical
+#-----------------------------------------------------------------------#
+@CODEOPTION
+USAGE: CODEOPTION
+Read the Code Option
+EX :
+   CODEOPTION
+#-----------------------------------------------------------------------#
+@DELAY
+USAGE:  DELAY %ms%
+%ms%   -> a delay time in milliseconds
+A delay function
+#-----------------------------------------------------------------------#
+@DFR
+USAGE:  DFR %name%
+%name%   -> data flash addrev or 0x00
+EX:
+DFR PCODE1
+DFR 0X00
+#-----------------------------------------------------------------------#
+@DFW
+USAGE:  DFW %name% %Value%
+%name%   -> data flash addrev or 0x00
+%value%   -> data flash addrev 
+EX:
+DFW PCODE1  12
+DFW 0X00  5
+#-----------------------------------------------------------------------#
+@DUMP
+USAGE:  DUMP [ON|OFF] [FILE(%filename%)]
+ON   -> Set the log on
+OFF   -> Set the log off
+FILE(%filename%) -> Log data to a file
+#-----------------------------------------------------------------------#
+@DEL
+USAGE: DEL %filename
+delete the file, log, or script
+#-----------------------------------------------------------------------#
+@MKDIR
+USAGE: MKDIR %folder
+Create a folder
+#-----------------------------------------------------------------------#
+@RMDIR
+USAGE: RMDIR %folder [CONFIRM]
+Remove a folder
+#-----------------------------------------------------------------------#
+@REGR
+USAGE: Read XDATA Regristy data
+EX :
+    REGR 0x100
+#-----------------------------------------------------------------------#
+@REGR32
+USAGE: Read ARM XDATA Regristy data
+EX :
+    REGR 0x101000
+#-----------------------------------------------------------------------#
+@REGD
+USAGE: DUMP XDATA Regristy data
+EX :
+    REGD 0x100 0x100
+#-----------------------------------------------------------------------#
+@REGD32
+USAGE: DUMP ARM XDATA Regristy data
+EX :
+    REGD32 0x101000 0x100
+#-----------------------------------------------------------------------#
+@REGW
+USAGE: Write XDATA Regristy data
+EX :
+    REGW 0x100 0x10
+#-----------------------------------------------------------------------#
+@REGW32
+USAGE: Write ARM XDATA Regristy data
+EX :
+    REGW32 0x101000 0x10
+#-----------------------------------------------------------------------#
+@CP
+USAGE: CP %source_file %destination_file
+copy a file
+#-----------------------------------------------------------------------#
+@DUMPVAR
+USAGE:  DUMPVAR	[HEX|FLOAT|DEC] INIT
+INIT  -> Initial variable V1~V15
+HEX   -> display the variables in hexdecimal
+FLOAT -> display the variables in floating point
+DEC   -> display the variables in decimal
+Dump the values of V0~V15 V16~V19
+#-----------------------------------------------------------------------#
+@DFD
+USAGE: DFD [Offset] (Size)
+[Offset]: BYTE offset(related to NeoDF SRAM data start address)
+(Size): The number of bytes to be read. Default value is 1
+Dump NeoDF SRAM data
+#-----------------------------------------------------------------------#
+@DFR
+USAGE1: DFR [Offset] [DataType]
+USAGE2: DFR [Abbrev]
+[Offset]: BYTE offset(related to NeoDF SRAM data start address)
+[DataType]: Indicate data type & data size
+            ex: H1 - Hex format & 1 byte
+                U2 - Unsigned format & 2 bytes
+                I4 - Signed format & 4 bytes
+                S2 - String format & 2 characters
+                D2 - Date format & 2 bytes
+[Abbrev]: Abbreviation of data flash parameter
+Read NeoDF data in SRAM
+#-----------------------------------------------------------------------#
+@DFW
+USAGE1: DFW [Offset] [DataType] [Data]
+USAGE2: DFW [Abbrev] [Data] (SRAM)
+[Offset]: BYTE offset(related to NeoDF SRAM data start address)
+[DataType]: Indicate data type & data size
+            ex: H1 - Hex format & 1 byte
+                U2 - Unsigned format & 2 bytes
+                I4 - Signed format & 4 bytes
+                S2 - String format & 2 bytes
+                D2 - Date format & 2 bytes
+[Data]: Data to be written to NeoDF
+[Abbrev]: Abbreviation of data flash parameter
+(SRAM): Only write SRAM
+Write NeoDF data in SRAM
+#-----------------------------------------------------------------------#
+@DFIR
+USAGE: DFIR [Addr]
+[Addr]: The address in data flash information block
+Read byte data from flash information block
+(Please jump to boot code first before executing this command)
+#-----------------------------------------------------------------------#
+@DFIW
+USAGE: DFIW [Addr] [ByteData]
+[Addr]: The address in data flash information block
+[ByteData]: The byte data to be written
+Write byte data to flash information block
+(Please jump to boot code first before executing this command)
+#-----------------------------------------------------------------------#
+@DA1
+USAGE DA1 [COM%] [INIT]|[VOLT(%num)]| [CONF(VOLT)]| GET(VOLT)
+parameter:[INIT],[CONF6E(VOLT)]|[CONF4E(VOLT)],CH
+ex:
+DA1 COM4
+DA1 INIT
+DA1 CONF4E(VOLT)
+DA1 VOLT(2.345), DA1 CH104 VOLT(2.312)
+DA1 GET(VOLT)
+baud rate:115200bps
+#-----------------------------------------------------------------------#
+@ECHO
+USAGE:  ECHO "%string%"
+Echo a string to screen
+#-----------------------------------------------------------------------#
+@EVMNAME
+USAGE:  EVMNAME
+get the EVM HW version
+#-----------------------------------------------------------------------#
+@EVMLEDID
+USAGE:  EVMLEDID
+get the CONNECT PC ID TO DISPLAY THE EVM LED
+#-----------------------------------------------------------------------#
+@EVMFREQ
+USAGE:  EVMFREQ %ON/0FF% STEP(%VALUE%)
+SET EVM P2.6 PIN OUTPUT THE FREQUENCY
+EX : 
+   EVMFREQ STEP(3) ON
+   => SET OUTPUT FREQUENCY 8000.00 KHZ
+   EVMFREQ OFF
+   => STOP THE OUTPUT FREQUENCY
+#-----------------------------------------------------------------------#
+@EVMPWM
+USAGE:  EVMPWM %ON/0FF% DUTY(%VALUE%) [EXT/ SYS/ (SYS/12)/ OSC/ (SYS/4)]
+SET EVM P2.6 PIN OUTPUT THE PWM
+%value% :duty cycle high is %d per cent
+EXT : timer base is used external clock source input to the EVM P2.7 pin
+SYS : timer base is used the system clock
+SYS/12 :timer base is used the (system clock)/12 
+SYS/4 :timer base is used the (system clock)/4 
+OSC :timer base is used the OSC/8 clock 
+EX : 
+   EVMPWM ON DUTY(20)
+   => PWM ON, the duty cycle high is 20 per cent on the EVM P2.6 pin output.
+   => timer base is system clock.
+   EVMPWM ON EXT
+   => PWM ON, the duty cycle high is 50 per cent on the EVM P2.6 pin output.
+   => timer base is external input clock EVM P2.7 pin.
+   EVMPWM OFF
+   => STOP THE OUTPUT FREQUENCY
+#-----------------------------------------------------------------------#
+@EXPR
+USAGE:  EXPR [number|V#|b[#}|EXPR=EXPR| (EXPR)|EXPR-EXPR|EXPR+EXPR
+               |EXPR*EXPR |EXPR/EXPR|EXPR&EXPR|EXPR%EXPR|EXPR/EXPR|
+               |EXPR==EXPR|EXPR>=EXPR|EXPR<=EXPR]...
+It supports logical and calculation functions
+#-----------------------------------------------------------------------#
+@ENDIF
+USAGE:  ENDIF
+The end clause for IF command
+ex:
+IF
+ ...
+ELSE
+ ...
+ENDIF
+#-----------------------------------------------------------------------#
+@ELSE
+USAGE:  ELSE
+The ELSE clause for IF command
+ex:
+IF
+ ...
+ELSE
+ ...
+ENDIF
+#-----------------------------------------------------------------------#
+@ERRSTOP
+USAGE:  ERRSTOP [ON|OFF]
+[ON]  : Default system setting, when running the script and error occured,
+        the script will stop
+[OFF] : System setting, when running the script and error occured,
+        the script will not stop and continoue the next command
+When the error occurs, the NeoAFT would stop or not
+#-----------------------------------------------------------------------#
+@ERRCNT
+USAGE:  ERRCNT [#]
+[#]  : Set the error count
+EX:
+ERRCNT -> for read out error count of the system
+ERRCNT 0 -> set the error count to 0
+EXPR V16 is sync to ERRCNT
+Report the error count
+#-----------------------------------------------------------------------#
+@ERRLOG
+USAGE: ERRLOG [ON|OFF] FILE(%name)
+EX:
+ERRLOG ON->create the errlog file which is named"errlog.txt"
+ERRLOG OFF->close the errlog file
+ERRLOG FILE(ERR.txt)
+Record the error message log
+#-----------------------------------------------------------------------#
+@ERRCODE
+USAGE: ERRCODE
+Show the error code of the previous command.
+It also stores the error code to the buffer W[0] for more usage.
+#-----------------------------------------------------------------------#
+@EEPDUMP
+USAGE:  EEPDUMP [Addr] [Size] (FileName) (PEC)
+[Addr]: The start address of EEPROM data to be dumped
+[Size]: The byte size of EEPROM data to be dumped
+(FileName): EEPROM dump file name (Default name is "EEP.bin")
+(PEC):      If "PEC" exists in the parameters, it means performing PEC.
+Dump EEPROM data from address [Addr] with size [size] to binary file.
+#-----------------------------------------------------------------------#
+@EL1
+USAGE:EL1 COM[%num]|CONF|OUTPUT(ON|OFF)|GET(CURR)|(CC|CCH|CCL)
+[COM]: EL1 COM[%num]
+[CONF]: EL1 CONF ->
+[OUTPUT ON|OFF]: EL1 OUTPUT(ON)|OUTPUT(OFF)
+[CC|CCL|CCH]:EL1 CC(0.5)
+[GET(CURR)]L EL1 GET(CURR)
+[MODE(CC|CP)]: MODE(CC)|MODE(CP)
+[CP]: EL1 CP(2)
+ex1.(CC mode)
+EL1 COM1
+EL1 CONF
+EL1 CC(0.75)
+EL1 OUTPUT(ON)
+EL1 GET(CURR)
+
+ex2. (CP mode)
+EL1 COM1
+EL1 CONF
+EL1 MODE(CP)
+EL1 CP(10)
+EL1 OUTPUT(ON)
+
+EL1 use to control the E-load. please reference the e-load user guide.
+#-----------------------------------------------------------------------#
+@EXEC
+USAGE: EXEC [%parament%]
+parament : execute the command on the console mode
+EX : 
+  CHDIR D:\SVN\NT1945_TB
+  EXEC DOWNLOAD.BAT HW
+#-----------------------------------------------------------------------#
+@EXECHIDE
+USAGE: EXECHIDE [%parament%]
+parament : hide the execute command on the console mode window
+EX : 
+  CHDIR D:\SVN\NT1945_TB
+  EXECHIDE DOWNLOAD.BAT HW
+#-----------------------------------------------------------------------#
+@FAIL
+USAGE:  FAIL
+It will print a big fail and stop the script
+#-----------------------------------------------------------------------#
+@FCC
+USAGE:  FCC
+SBS command (0x10)
+Report the capacity when the battery is full charge
+#-----------------------------------------------------------------------#
+@FREQ
+USAGE:  FREQ
+Get EVM P2_7 input frequency 
+#-----------------------------------------------------------------------#
+@FLASHME
+USAGE: FLASHME
+Mass Erase the whole flash (Set each byte to 0xff)
+#-----------------------------------------------------------------------#
+@FLASHPE
+USAGE: FLASHPE
+Page Erase
+Erase a 256-byte page with starting address FWA.
+#-----------------------------------------------------------------------#
+@FLASHR
+USAGE: FLASHR [DATA/ALL] START(#) LEN(#) IC(NAME) 
+Flash Read
+Read the data from flash
+EX:
+  FLASHR ALL IC(ZET6231) --> ALL flash
+  FLASHR DATA IC(ZET6231)--> ALL DATA flash
+  SETIC ZET6231
+  FLASHR ALL 
+  FLASHR DATA 
+  FLASHR START(248) LEN(8) 
+#-----------------------------------------------------------------------#
+@FLASHW
+USAGE: FLASHW FILE(NAME) [DATA/ALL] START(#) LEN(#) IC(NAME)
+FLASHW  
+Write the data to address "FWA" of flash
+EX:
+  FLASHW FILE(ZET6231.BIN) ALL
+  FLASHW FILE(ZET6231Data.BIN) DATA
+  FLASHW START(0) LEN(256) --> from the cmd buffer 0 ~ N write to flash
+#-----------------------------------------------------------------------#
+@FLOOR 
+USAGE: FLOOR DATA
+DATA-> variable data
+Calculates the floor of a value.
+EX.
+   EXPR V1 = 233.123
+   FLOOR V1
+   V1 = 233.000
+#-----------------------------------------------------------------------#
+@GENPATTERN
+USAGE:  GENPATTERN [TYPE/DATA(#)] ADDR(#) LEN(#)
+TYPE->  INC/DEC/DATA(#)
+ADDR->  SHIFT FROM BUF[0]
+LEN->  LENGTH (MAX==0x4000)
+It provides user to fill routine pattern in the buffer
+#-----------------------------------------------------------------------#
+@GENDATE
+USAGE:  GENDATE [TYPE]
+TYPE -> the '/' change to '_'
+It provides user to get system time to buffer data
+EX:
+GENDATE
+=> Date time : 2011/01/26
+GENDATE TYPE
+=> Date time : 2011_01_26
+#-----------------------------------------------------------------------#
+@GENTIME
+USAGE:  GENTIME [TYPE]
+TYPE -> the '/' change to '_'
+It provides user to get system time to buffer data
+EX:
+GENDATE
+=> Date time : 12:10:356
+GENDATE TYPE
+=> Date time : 12_10_356
+#-----------------------------------------------------------------------#
+@GETEVM
+USAGE: GETEVM
+Get EVM device number
+#-----------------------------------------------------------------------#
+@GENPEC
+USAGE: GENPEC INPUT ARGUMENTS
+Input the arguments then will output the PEC code
+#-----------------------------------------------------------------------#
+@HELP
+USAGE:  HELP [CMD]
+It shows the detail of the command
+#-----------------------------------------------------------------------#
+@IF
+USAGE:  IF
+IF command
+ex:
+IF
+ ...
+ELSE
+ ...
+ENDIF
+#-----------------------------------------------------------------------#
+@I2CW
+USAGE: I2CW %Addr %Value
+Write the value (BYTE) to Addr
+#-----------------------------------------------------------------------#
+@I2C
+USAGE: I2C %Addr
+Read the value from Addr
+#-----------------------------------------------------------------------#
+@I2CWB
+USAGE: I2CWB %cmd %Value
+Write the value (BYTE) to Gauge address 0xAA 
+EX: I2CRW 0x00 0x12
+#-----------------------------------------------------------------------#
+@I2CWW
+USAGE: I2CWB %cmd %Value
+Write the value (BYTE) to Gauge address 0xAA 
+EX: I2CRW 0x00 0x1234
+#-----------------------------------------------------------------------#
+@I2CWP
+USAGE: I2CWP %cmd %size
+Write the value (BYTE) to Gauge address 0xAA 
+EX: I2CWP 0x00 0x05 write the B[0~4] data 
+#-----------------------------------------------------------------------#
+@I2CRB
+USAGE: I2CRB %cmd
+Read the value from cmd on Gauge address 0xAA 
+EX: I2CRW 0x00 
+#-----------------------------------------------------------------------#
+@I2CRW
+USAGE: I2CRW %cmd
+Read the value from cmd on Gauge address 0xAA 
+EX: I2CRW 0x00 
+#-----------------------------------------------------------------------#
+@I2CRP
+USAGE: I2CRP %cmd size(%len)
+Read the value from cmd on Gauge address 0xAA 
+EX: I2CRP 0x00 size(0x02)
+#-----------------------------------------------------------------------#
+@I2CQB
+USAGE: I2CQB
+Read Gauge address 0xAA 
+EX: I2CQB
+#-----------------------------------------------------------------------#
+@INTERVALSMB
+USAGE: INTERVALSMB [value]
+To control SW send command interval delay then receive time
+Read the value from Addr
+#-----------------------------------------------------------------------#
+@INTERVALI2C
+USAGE: INTERVALI2C [value]
+To control SW send command interval delay then receive time
+Read the value from Addr
+#-----------------------------------------------------------------------#
+@INTERVALTX
+USAGE: INTERVALTX [value]
+To control SW send command interval delay then receive time
+Read the value from Addr
+#-----------------------------------------------------------------------#
+@IACNTL
+USAGE: IACNTL [sub command]
+[sub command]
+Put keys and challenge in buffer first by little endian.
+CK: Change key
+CLG: Set the challenge and excutge SHA-1 calculation.
+Control (I2C 0x7E)
+#-----------------------------------------------------------------------#
+@LOOPSTART
+USAGE:  LOOPSTART #count/ (hh:mm:ss)
+Start command for loop function
+ex:
+LOOPSTART 300
+  ...
+LOOPEND
+LOOPSTART (00:01:00)
+¡K
+LOOPEND
+#-----------------------------------------------------------------------#
+@LOOPEND
+USAGE:  LOOPEND
+end command for loop function
+ex:
+LOOPSTART 300
+  ...
+LOOPEND
+#-----------------------------------------------------------------------#
+@LOADBUF [ADDR(#)][SIZE(#) FILE($FILENAME)
+USAGE:  SAVEBUF [ADDR(#)][SIZE(#)][HEX|BIN] [FILE($FILENAME)]
+ADDR: START ADDRESS TO LOAD THE BUFFER DATA IN
+SIZE: THE LENGTH IN BYTE TO LOAD THE BUFFER
+FILE: THE INPUT FILE TO LOAD WHICH IS NAMED $FILENAME.
+Load the file to buffer
+#-----------------------------------------------------------------------#
+@LOADWORD [V%ARGUMENT%][B[%START%]][BIG]
+USAGE:  LOADWORD [V#][B[#]]
+V:    this is variable on the NeoAft
+B[#]: this is buffer start addr on the NeoAft
+BIG : 1. input "BIG" the word is big Endian
+      2. not input the word is little Endian
+#-----------------------------------------------------------------------#
+@LOADENC [ADDR(#)][LEN(#)] FILE($FILENAME)
+USAGE:  SAVEBUF [ADDR(#)][SIZE(#)][HEX|BIN] [FILE($FILENAME)]
+ADDR: START ADDRESS TO LOAD THE BUFFER DATA IN
+LEN: THE LENGTH IN BYTE TO LOAD THE BUFFER
+FILE: THE INPUT FILE TO LOAD WHICH IS NAMED $FILENAME.
+#-----------------------------------------------------------------------#
+@LOG
+USAGE:  LOG [FILE(%filename%)] [FILEID(#)] [SUB(CSV)][string][SYSTIME][b[#]][W[#]][F[#]][V#][TYPE][[N]]
+
+FILE: If any different data exists, the information will be recorded in the file with this name.
+      If no filename is typed, the default name "dumpLog.txt" will be used.
+FILEID : append the file name back
+String : input to file string
+B[#] : buffer on the NeoAft
+V# : Variable on the NeoAft
+TYPE : defluat is HEX => DEC/FLOAT/HEX
+[N] : next line
+ EX:
+  EXPR V3 = 3
+  EXPR B[101] = 1
+  LOG FILE(MPKTEST) FILEID(B[101]) SUB(CSV) SYSTIME
+  LOG FILE(MPKTEST) FILEID(B[101]) SUB(CSV) V3 DEC  ==> FILE : MPKTEST_1.csv
+  LOG FILE(MPKTEST) FILEID(B[101]) SUB(CSV) V3 FLOAT
+  LOG FILE(MPKTEST) FILEID(B[101]) SUB(CSV) V3
+  LOG FILE(MPKTEST) FILEID(B[101]) SUB(CSV) V3 [N]
+#-----------------------------------------------------------------------#
+@MOVEBUF
+USAGE:  MOVEBUF [ADDR1(#)][ADDR2(#)][LEN(#)]
+ADDR1: Start address of source data to be moved.
+ADDR2: Start address of destination.
+LEN: The number of byte to be moved.
+Note: The source block will be clear as "0" when data has been moved.
+#-----------------------------------------------------------------------#
+@MM1
+USAGE: MM1 COM[%num]
+parameter:
+[INIT]-> Device inital and set as the remote mode
+[GET(VOLT)]-> get the voltage value
+[GET(CURR)]-> get the current value
+[GET(FREQ)]-> get the frequency [3Hz~300KHz]
+[FETCH]-> get the meter information (U1251A only)
+ex.
+MM1 COM7
+MM1 INIT
+MM1 GET(VOLT)
+
+MM1 FETCH
+#-----------------------------------------------------------------------#
+@PCREG
+USAGE:  PCREG [%name%] [DATA(%string%)]
+Access the PC registry
+EX :
+  PCREG DATA(1234)=> Set default name content data on the registry
+  PCREG => get default name data on the registry
+  PCREG EVMTEMP DATA(1234)=> Set "evmtemp" name content data on the registry
+  PCREG EVMTEMP => get "evmtemp" name content data on the registry
+#-----------------------------------------------------------------------#
+@PFSR
+USAGE: PFSR
+Read out PF status data which are saved in data flash when PF occurs
+#-----------------------------------------------------------------------#
+@PS1
+@PS2
+@PS3
+USAGE: PS1 [COM#]
+       PS1 [OUTPUT(ON)|OUTPUT(OFF)]
+       PS1  CH# [VOLT(%volt%)][CURR[%curr%]]]
+       PS1 GET(VOLT)
+
+COM# -> Default com4, you can choose your com port
+  MODEL -> Power supply supported : E3632A, E3621A, E3648A only
+CH -> channel of the power supply to adjust
+OUTPUT(ON) ->  start output the voltage and current
+OUTPUT(OFF) ->  stop output the voltage and current
+GET(VOLT) -> fetch the current channel's voltage
+GET(CURR) -> fetch the current channel's current
+CLOSE -> close the com port and release the resource
+ERR -> report the error message which the device has experienced
+INIT -> device initial
+
+PS1 Setting of power supply #1
+PS2 Setting of power supply #2
+PS3 Setting of power supply #3
+
+Ex:
+PS1 COM5 model(E3632A) output(off)
+PS1 COM5 output(on)
+PS1 COM5 model(E3632A) CH2 VOLT(16.0) CURR(0.06)
+Power supply control
+#-----------------------------------------------------------------------#
+@PORT2W
+USAGE:  PORT2W %value%
+control EVM port 2 pin
+EX :
+  PORT2W 0xFF
+#-----------------------------------------------------------------------#
+@PORT2R
+USAGE:  PORT2R
+read EVM port 2 status
+EX :
+  PORT2R
+#-----------------------------------------------------------------------#
+@PORT2S
+USAGE: PORT2S data
+set EVM port 2 mode, 0:open-drain, 1:push-pull
+EX :
+  PORT2S 0x12
+#-----------------------------------------------------------------------#
+@PORT1W
+USAGE:  PORT2W %value%
+control EVM port 1 pin
+EX :
+  PORT1W 0xFF
+#-----------------------------------------------------------------------#
+@PORT1R
+USAGE:  PORT1R
+read EVM port 1 status
+EX :
+  PORT1R
+#-----------------------------------------------------------------------#
+@POLL
+USAGE:  POLL FINGER(%num%) CNT(%cnt%) %KEY% 
+num : finger number
+cnt : run time count
+KEY : add KEY information
+polling the touch device data
+EX :
+  POLL FINGER(10)
+  POLL FINGER(10) CNT(3)
+#-----------------------------------------------------------------------#
+@POLL5
+USAGE:  POLL5
+polling the touch device finger 5
+EX :
+  POLL5
+#-----------------------------------------------------------------------#
+@POLL10
+USAGE:  POLL10
+polling the touch device finger 10
+EX :
+  POLL10
+#-----------------------------------------------------------------------#
+@PULSE2
+USAGE:  PULSE2 %pin% %pulse time%
+set evm port 2 pin number do a pulse and "pulse wide time is word"
+EX :
+  PULSE2 1 0x1234
+  PULSE2 1 1234
+#-----------------------------------------------------------------------#
+@PWM
+USAGE:  PWM ON/OFF
+set EVM start or Off pwm duty cycle to high low pluse.
+EX :
+  PWM ON
+  PWM OFF
+#-----------------------------------------------------------------------#
+@PWMPARA
+USAGE:  PWMPARA %DUTY_HIGH% %DUTY_LOW% %COP_DSB_HIGH% %COP_DSB_LOW% %PORT2PIN%
+set pwm duty high wide,low wide pulse , dsb high wide , low wide pulse
+then use port2 pin setting is SFR on the one cycle.
+EX :
+  PWMPARA 1 2 2 1 0xFF
+  PWMPARA 1 2 2 1 1
+#-----------------------------------------------------------------------#
+@PCM
+USAGE:  PCM %BUS% %Addr% %RegAddr% [%Data%][LEN(%N%)] [ID]
+Send read/write command to PCM board
+EX :
+  PCM CHG 0X12 0X14 0X80 0X00 => Write charger command
+  PCM CHG 0X12 0X14  => read charger command
+  PCM BAT(0~6) 0xAA 0x02 0x01 => Write channel command
+  PCM BAT(0~6) 0xAA 0x02  => read channel command
+  PCM BAT(0~6) ID  => read channel ID command
+  if BAT(big then 7 or 0 ) the get data is system gauge IC data
+#-----------------------------------------------------------------------#
+@OPERSTS
+USAGE:  OPERSTS
+Extended SBS command (0x54)
+System operation status
+#-----------------------------------------------------------------------#
+@OPERSTS2
+USAGE:  OPERSTS2
+Extended SBS command (0x55)
+System operation status2
+#-----------------------------------------------------------------------#
+@PASS
+USAGE:  PASS
+It will print a big pass and stop the script
+#-----------------------------------------------------------------------#
+#-----------------------------------------------------------------------#
+@RW
+USAGE:  RW
+Read word from  ic 
+The return value will be stored in the W[0]
+#-----------------------------------------------------------------------#
+@RW
+USAGE:  RWINTX [%parament%] [delay(%value%)]
+parament : setting read command 
+Read word interval setting
+EX:
+ RWINTX 0x01 0x02 0x03 0x04 0x05 delay(1) => command interval 1ms
+ RWINTX 0x01 0x02 0x03 0x04 0x05 delay(0.5) => command interval 0.5ms
+#-----------------------------------------------------------------------#
+@RP
+USAGE:  RP
+Read string to gauge ic (address=0x16)
+The return value will be stored from the B[0]
+#-----------------------------------------------------------------------#
+@RPX
+USAGE:  RPX ADDR(%num) SIZE(%num) PEC
+Read string (>512byte) to gauge ic (address=0x16)
+The return value will be stored from the B[0]
+#-----------------------------------------------------------------------#
+@RUN
+USAGE:  RUN [%filename%]
+Run a script the script shall be formed by the commands supported
+by NeoAFT
+#-----------------------------------------------------------------------#
+@REGR
+USAGE: REGR %addr
+Read the value of the register
+Vender SBS command
+#-----------------------------------------------------------------------#
+@REGW
+USAGE: REGW %addr %Value
+Write the value of the register
+Vender SBS command
+#-----------------------------------------------------------------------#
+@REGD
+USAGE: REGD %addr SIZE(%number)
+Dump the register's value default size = 64
+Vender SBS command
+#-----------------------------------------------------------------------#
+@RX
+USAGE: RX num[%]
+Receive the data after setting TX command
+#-----------------------------------------------------------------------#
+@RAND
+USAGE: RAND
+Generate random number to F[0]
+#-----------------------------------------------------------------------#
+@SBS
+USAGE:  SBS %cmd% [SIZE(%num%)] [WT]
+%cmd% -> in hexdecimal
+SIZE(%num%) ->  the read or write size
+WT -> means write, the write in data is the buffer
+Issue a SBS command
+The read back will be stored in the buffer.
+The write in data is from the buffer as well.
+#-----------------------------------------------------------------------#
+@START
+USAGE:  START %com% HID(%value%)
+%com% -> the com port need to start
+%value% -> set the DW arrary index
+Start the communication with the gauge IC (baudrate 9600)
+Hot Key->F2
+EX :
+  START HID(V0)
+  START HID(0)
+#-----------------------------------------------------------------------#
+@SILENT [OFF]
+USAGE:  SILENT or F11
+print display view command line off/ON
+EX :
+  SILENT     -> print off
+  SILENT OFF -> print on
+#-----------------------------------------------------------------------#
+@STRCPY [Destination] [Source]
+USAGE:  STRCPY S[0] B[0]
+This to provide the string copy 
+EX :
+  STRCPY B[0] -> copy the buffer data to Str0
+  STRCPY S[1] B[0] -> copy the buffer data to Str1
+#-----------------------------------------------------------------------#
+@SAVEBUF
+USAGE:  SAVEBUF [ADDR(#)][SIZE(#)][HEX|BIN] [FILE($FILENAME)]
+ADDR: START ADDRESS TO SAVE THE BUFFER DATA
+SIZE: THE LENGTH IN BYTE YOU WANT TO SAVE
+HEX: SAVE THE OUTPUT FILE TO THE READABLE HEX FORMAT
+BIN: SAVE THE OUTPUT FILE
+FILE: SAVE THE OUTPUT FILE TO THE FILE NAMED $FILENAME
+      IF THERE IS NO FILENAME, SAVE THE BUFFER TO "BUFFER.BIN".
+
+SAVE BUFFER TO A FILE, DEFAULT NAMED BUFFER.BIN
+#-----------------------------------------------------------------------#
+@SETSLAVE
+USAGE: SETSLAVE
+Vender EVM command to change EVM SMB mode to receive gauge IC master mode
+transmit data
+ex: SETSLAVE
+#-----------------------------------------------------------------------#
+@SYSCLK
+USAGE: SYSCLK [2|4|8]
+Set NT1945 system clock to 2Mhz, 4MHz, 8MHz
+#-----------------------------------------------------------------------#
+@SHA1
+USAGE: SHA1 FILE(%filename)
+Generate the SHA1 algorithm result, display by big-endian
+#-----------------------------------------------------------------------#
+@SHUTDOWN
+USAGE: SHUTDOWN
+Enter shutdown mode
+#-----------------------------------------------------------------------#
+@SEAL
+USAGE: SEAL
+Seal the gauge IC
+#-----------------------------------------------------------------------#
+@SLEEP
+USAGE: SLEEP
+Enter sleep mode
+#-----------------------------------------------------------------------#
+@SMBLINE
+USAGE: SMBLINE [ON|OFF|SCK(ON)|SCK(OFF)|SDA(ON)|SDA(OFF)]
+Use NPP_command to control SMBus line status
+EX. SMBLINE ON
+EX. SMBLINE OFF
+EX. SMBLINE SCK(ON)
+#-----------------------------------------------------------------------#
+@SPRT
+@SPRT0
+@SPRT1
+@SPRT2
+@SPRT3
+USAGE: SPRT ["FMT"] [Vx] [B[x]]
+Store a specific pattern string to S[x]
+SPRT, SPRT0 => S[0]
+SPRT1 => S[1]
+SPRT2 => S[2]
+SPRT3 => S[3]
+
+EX. SPRT "V1=%d V2=%d V3=%d " V1 V2 V3
+EX. SPRT0 "V1=%f V2=%f V3=%f " V1 V2 V3
+EX. SPRT1 "A_%D.CSB" V1
+EX. XXXX FILE(S[0])
+#-----------------------------------------------------------------------#
+@TX
+USAGE: TX byte1 byte2 byte3¡Ketc
+If not run script AP will auto receive data
+Pure npp command, tx command can assemble any SBS command
+#-----------------------------------------------------------------------#
+@TRACENAME
+USAGE: TRACENAME
+read C1 command TraceX/Y name list or read data flash data
+#-----------------------------------------------------------------------#
+@TMRSTART
+USAGE: TMRSTART
+set the timer start flag for delta timer
+#-----------------------------------------------------------------------#
+@TMRSTOP
+USAGE: TMRSTOP
+set the timer stop flag for delta timer and calculate the delta time.
+#-----------------------------------------------------------------------#
+@TEDV2 EMC(%D%) CURR(%D%) EDVG(%D%) EDVTG(%D%)
+USAGE: TEDV2 EMC(%D%) CURR(%D%) EDVG(%D%) EDVTG(%D%)
+EDVG: EDV Gain
+EDVTG: EDV temperature Gain
+NT1908 Calculate TEDV2 voltage
+#-----------------------------------------------------------------------#
+@WAIT
+USAGE:  WAIT [ON/OFF]
+User press any key then script continued.
+[ON/OFF] to open/close this function. Default is ON.
+EXMAPLE:
+  WAIT  -> Need to press key to continue.
+  WAIT OFF -> Further "WAIT" is useless untill "WAIT ON"
+#-----------------------------------------------------------------------#
+@WW
+USAGE:  WW %HEX%
+Write word to gauge ic (address=0x16)
+#-----------------------------------------------------------------------#
+@WP
+USAGE:  WP [CMD] SIZE[num] PEC
+Write page to gauge ic (address=0x16)
+#-----------------------------------------------------------------------#
+@WPX
+USAGE:  WPX ADDR(%num) SIZE(%num) PEC
+Write page to gauge ic (address=0x16)
+#-----------------------------------------------------------------------#
+@WDREDATA
+USAGE:  WDREDATA
+Extended SBS command (0x58)
+Report the number of Watch Dog resets the device has experienced
+#-----------------------------------------------------------------------#
+@RST
+@RESET
+USAGE:  
+Control the RST pin of the touch IC
+RST  --> RST pin high and RST low
+RST HIGH --> RST pin high only
+RST LOW --> RST pin low only
+#-----------------------------------------------------------------------#
+@RELOAD
+USAGE: 
+read the data flash 1K size data
+#-----------------------------------------------------------------------#
+@Z2CR
+USAGE:  
+Z2CR $ --> Read $ bytes from the HID bridge
+
+NOT WAIT INT LOW READ DATA
+Z2CR 5
+Z2CR 0X10 
+#-----------------------------------------------------------------------#
+@Z2CW
+USAGE:  
+
+Z2CW $ --> Write # bytes from buffer to the HID bridge
+EXPR B[0] = 1
+EXPR B[1] = 2
+Z2CW 2
+Z2CW 0X2 
+#-----------------------------------------------------------------------#
+@Z2CGG
+USAGE:  
+Z2C GPIO GET
+
+Z2CGG $
+
+$ = 0x30 --> INT pin
+$ = 0x31 --> RST pin
+
+return 1 --> PIN HIGH
+return 0 --> PIN LOW
+#-----------------------------------------------------------------------#
+@Z2CGS
+USAGE:  
+Z2C GPIO SET
+
+Z2CGS $ 1 --> SET high
+Z2CGS $ 0 --> SET Low
+
+$ = 0x30 --> INT pin
+$ = 0x31 --> RST pin
+#-----------------------------------------------------------------------#
+@ZW
+USAGE:
+ONLY SEND COMMAND  
+ZW 0X12 0X34 0X56 0X78
+#-----------------------------------------------------------------------#
+@ZR
+USAGE:
+WAIT INT LOW READ DATA
+ZR 5
+ZR 0X10
+#-----------------------------------------------------------------------#
+@ITO
+USAGE:
+ITO MAX(%) MIN(%) ABS(%) REVMAX(%) REVMIN(%) REVABS(%) LOG(%)
+MAX(%)    --> FORWARD MAX
+MIN(%)    --> FORWARD MIN
+ABS(%)    --> FORWARD DIFFER ABS VALUE THREADSHOLD
+REVMAX(%) --> REVERSE MAX                            
+REVMIN(%) --> REVERSE MIN                            
+REVABS(%) --> REVERSE DIFFER ABS VALUE THREADSHOLD   
+LOG(%)    --> 0:LOG ALL 1:LOG FAIL 3: NOT LOG
+#-----------------------------------------------------------------------#
+@ITO3
+USAGE:  
+ITO GEN(FILE_NAME) --> Generate the golden sample
+ITO FILE(FILE_NAME) MIN(%) MAX(%) 1ST(%) 2ND(%) LOG(%)
+MIN(%) -->  low bound ratio
+MAX(%) -->  high bound ratio
+1ST(%) -->  high value level (0~7)
+2ND(%) -->  low value level (0~7)
+LOG(%)    --> 0:LOG ALL 1:LOG FAIL 3: NOT LOG
+#-----------------------------------------------------------------------#
+@ITO4
+USAGE:  
+ITO4 GEN(FILE_NAME) --> Generate the golden sample
+ITO4 FILE(FILE_NAME) MIN(%) MAX(%) 1ST(%) 2ND(%)
+MIN(%) -->  low bound ratio
+MAX(%) -->  high bound ratio
+1ST(%) -->  high value level (0~7)
+2ND(%) -->  low value level (0~7)
+EX :
+  ITOOPEN FILE(FILE_NAME) 
+#-----------------------------------------------------------------------#
+@FPCOPEN
+USAGE:  
+FPCOPEN --> always run
+FPCOPEN MIN(%) TIMEOUT(3000) --> FPCOPEN TEST
+#-----------------------------------------------------------------------#
+@FPCSHORT
+USAGE:  
+FPCSHORT --> always run
+MIN(%) -->  low bound ratio
+MAX(%) -->  high bound ratio 
+DMIN(%) -->  low bound ratio
+DMAX(%) -->  high bound ratio 
+FPCSHORT MIN(%) MAX(%) CNT(3000) --> FPCSHORT TEST
+#-----------------------------------------------------------------------#
+@OPENC
+USAGE: FPC OPEN 2 (open circuit) 
+MIN(%) -->  low bound ratio
+MAX(%) -->  high bound ratio 
+1ST(%) -->  high value level (0~7)
+2ND(%) -->  low value level (0~7)
+OPENC FILE(%) --> used the default test
+OPENC FILE(%) MIN(%) MAX(%) 1ST(5) 2ND(2) -> setting the need setting
+OPENC GEN(%) -> used the default setting gen golden
+OPENC GEN(%) 1ST(5) 2ND(2) -> setting the gen data
+#-----------------------------------------------------------------------#
+@MBEV
+USAGE:  
+MBEV --> always run
+#-----------------------------------------------------------------------#
+@MBEV
+USAGE:  
+MBEVX --> always run for the UI display used
+#-----------------------------------------------------------------------#
+!EOF
