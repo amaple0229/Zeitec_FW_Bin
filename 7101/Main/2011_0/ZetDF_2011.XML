@@ -4386,451 +4386,479 @@
 				<ui group="座標重標定(CoordRemap)" groupidx="290" idx="10" name="不同尺寸Pitch座標重標定：開關，0=關閉，1=開啟" mask="0x01" type="U1" min="0" max="1" default="0" abbrev="COORD_REMAP_ENABLE">不同尺寸Pitch座標重標定：開關：0=關閉，1=開啟</ui>
 			</item>
 			<item type="U1" name="bCoordRemapDriveAxis00" abbrev="COORD_REMAP_DRIVE_AXIS00">
-				<default>0x00</default>
+				<default>0</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Drive Axis00:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Drive Axis00:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapDriveAxis01" abbrev="COORD_REMAP_DRIVE_AXIS01">
-				<default>0x01</default>
+				<default>4</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Drive Axis01:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Drive Axis01:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapDriveAxis02" abbrev="COORD_REMAP_DRIVE_AXIS02">
-				<default>0x02</default>
+				<default>8</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Drive Axis02:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Drive Axis02:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapDriveAxis03" abbrev="COORD_REMAP_DRIVE_AXIS03">
-				<default>0x03</default>
+				<default>12</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Drive Axis03:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Drive Axis03:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapDriveAxis04" abbrev="COORD_REMAP_DRIVE_AXIS04">
-				<default>0x04</default>
+				<default>16</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Drive Axis04:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Drive Axis04:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapDriveAxis05" abbrev="COORD_REMAP_DRIVE_AXIS05">
-				<default>0x05</default>
+				<default>20</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Drive Axis05:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Drive Axis05:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapDriveAxis06" abbrev="COORD_REMAP_DRIVE_AXIS06">
-				<default>0x06</default>
+				<default>24</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Drive Axis06:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Drive Axis06:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapDriveAxis07" abbrev="COORD_REMAP_DRIVE_AXIS07">
-				<default>0x07</default>
+				<default>28</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Drive Axis07:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Drive Axis07:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapDriveAxis08" abbrev="COORD_REMAP_DRIVE_AXIS08">
-				<default>0x08</default>
+				<default>32</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Drive Axis08:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Drive Axis08:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapDriveAxis09" abbrev="COORD_REMAP_DRIVE_AXIS09">
-				<default>0x09</default>
+				<default>36</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Drive Axis09:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Drive Axis09:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapDriveAxis10" abbrev="COORD_REMAP_DRIVE_AXIS10">
-				<default>0x0A</default>
+				<default>40</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Drive Axis10:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Drive Axis10:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapDriveAxis11" abbrev="COORD_REMAP_DRIVE_AXIS11">
-				<default>0x0B</default>
+				<default>44</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Drive Axis11:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Drive Axis11:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapDriveAxis12" abbrev="COORD_REMAP_DRIVE_AXIS12">
-				<default>0x0C</default>
+				<default>48</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Drive Axis12:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Drive Axis12:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapDriveAxis13" abbrev="COORD_REMAP_DRIVE_AXIS13">
-				<default>0x0D</default>
+				<default>52</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Drive Axis13:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Drive Axis13:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapDriveAxis14" abbrev="COORD_REMAP_DRIVE_AXIS14">
-				<default>0x0E</default>
+				<default>56</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Drive Axis14:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Drive Axis14:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapDriveAxis15" abbrev="COORD_REMAP_DRIVE_AXIS15">
-				<default>0x0F</default>
+				<default>60</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Drive Axis15:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Drive Axis15:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapDriveAxis16" abbrev="COORD_REMAP_DRIVE_AXIS16">
-				<default>0x10</default>
+				<default>64</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Drive Axis16:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Drive Axis16:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapDriveAxis17" abbrev="COORD_REMAP_DRIVE_AXIS17">
-				<default>0x11</default>
+				<default>68</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Drive Axis17:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Drive Axis17:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapDriveAxis18" abbrev="COORD_REMAP_DRIVE_AXIS18">
-				<default>0x12</default>
+				<default>72</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Drive Axis18:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Drive Axis18:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapDriveAxis19" abbrev="COORD_REMAP_DRIVE_AXIS19">
-				<default>0x13</default>
+				<default>76</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Drive Axis19:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Drive Axis19:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapDriveAxis20" abbrev="COORD_REMAP_DRIVE_AXIS20">
-				<default>0x14</default>
+				<default>80</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Drive Axis20:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Drive Axis20:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapDriveAxis21" abbrev="COORD_REMAP_DRIVE_AXIS21">
-				<default>0x15</default>
+				<default>84</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Drive Axis21:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Drive Axis21:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapDriveAxis22" abbrev="COORD_REMAP_DRIVE_AXIS22">
-				<default>0x16</default>
+				<default>88</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Drive Axis22:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Drive Axis22:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapDriveAxis23" abbrev="COORD_REMAP_DRIVE_AXIS23">
-				<default>0x17</default>
+				<default>92</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Drive Axis23:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Drive Axis23:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapDriveAxis24" abbrev="COORD_REMAP_DRIVE_AXIS24">
-				<default>0x18</default>
+				<default>96</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Drive Axis24:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Drive Axis24:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapDriveAxis25" abbrev="COORD_REMAP_DRIVE_AXIS25">
-				<default>0x19</default>
+				<default>100</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Drive Axis25:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Drive Axis25:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapDriveAxis26" abbrev="COORD_REMAP_DRIVE_AXIS26">
-				<default>0x1A</default>
+				<default>104</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Drive Axis26:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Drive Axis26:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapDriveAxis27" abbrev="COORD_REMAP_DRIVE_AXIS27">
-				<default>0x1B</default>
+				<default>108</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Drive Axis27:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Drive Axis27:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapDriveAxis28" abbrev="COORD_REMAP_DRIVE_AXIS28">
-				<default>0x1C</default>
+				<default>112</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Drive Axis28:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Drive Axis28:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapDriveAxis29" abbrev="COORD_REMAP_DRIVE_AXIS29">
-				<default>0x1D</default>
+				<default>116</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Drive Axis29:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Drive Axis29:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapDriveAxis30" abbrev="COORD_REMAP_DRIVE_AXIS30">
-				<default>0x1E</default>
+				<default>120</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Drive Axis30:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Drive Axis30:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapDriveAxis31" abbrev="COORD_REMAP_DRIVE_AXIS31">
-				<default>0x1F</default>
+				<default>124</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Drive Axis31:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Drive Axis31:Pin Unit Coordinate. </description>
+				<unit>-</unit>
+			</item>
+			<item type="U1" name="bCoordRemapDriveAxis32" abbrev="COORD_REMAP_DRIVE_AXIS32">
+				<default>128</default>
+				<min>0</min>
+				<max>255</max>
+				<description>Coordinate Remap Drive Axis32:Pin Unit Coordinate. </description>
+				<unit>-</unit>
+			</item>
+			<item type="U1" name="bCoordRemapDriveAxis33" abbrev="COORD_REMAP_DRIVE_AXIS33">
+				<default>132</default>
+				<min>0</min>
+				<max>255</max>
+				<description>Coordinate Remap Drive Axis33:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapSenseAxis00" abbrev="COORD_REMAP_SENSE_AXIS00">
-				<default>0x00</default>
+				<default>0</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Sense Axis00:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Sense Axis00:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapSenseAxis01" abbrev="COORD_REMAP_SENSE_AXIS01">
-				<default>0x01</default>
+				<default>4</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Sense Axis01:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Sense Axis01:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapSenseAxis02" abbrev="COORD_REMAP_SENSE_AXIS02">
-				<default>0x02</default>
+				<default>8</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Sense Axis02:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Sense Axis02:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapSenseAxis03" abbrev="COORD_REMAP_SENSE_AXIS03">
-				<default>0x03</default>
+				<default>12</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Sense Axis03:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Sense Axis03:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapSenseAxis04" abbrev="COORD_REMAP_SENSE_AXIS04">
-				<default>0x04</default>
+				<default>16</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Sense Axis04:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Sense Axis04:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapSenseAxis05" abbrev="COORD_REMAP_SENSE_AXIS05">
-				<default>0x05</default>
+				<default>20</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Sense Axis05:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Sense Axis05:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapSenseAxis06" abbrev="COORD_REMAP_SENSE_AXIS06">
-				<default>0x06</default>
+				<default>24</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Sense Axis06:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Sense Axis06:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapSenseAxis07" abbrev="COORD_REMAP_SENSE_AXIS07">
-				<default>0x07</default>
+				<default>28</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Sense Axis07:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Sense Axis07:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapSenseAxis08" abbrev="COORD_REMAP_SENSE_AXIS08">
-				<default>0x08</default>
+				<default>32</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Sense Axis08:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Sense Axis08:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapSenseAxis09" abbrev="COORD_REMAP_SENSE_AXIS09">
-				<default>0x09</default>
+				<default>36</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Sense Axis09:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Sense Axis09:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapSenseAxis10" abbrev="COORD_REMAP_SENSE_AXIS10">
-				<default>0x0A</default>
+				<default>40</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Sense Axis10:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Sense Axis10:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapSenseAxis11" abbrev="COORD_REMAP_SENSE_AXIS11">
-				<default>0x0B</default>
+				<default>44</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Sense Axis11:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Sense Axis11:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapSenseAxis12" abbrev="COORD_REMAP_SENSE_AXIS12">
-				<default>0x0C</default>
+				<default>48</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Sense Axis12:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Sense Axis12:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapSenseAxis13" abbrev="COORD_REMAP_SENSE_AXIS13">
-				<default>0x0D</default>
+				<default>52</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Sense Axis13:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Sense Axis13:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapSenseAxis14" abbrev="COORD_REMAP_SENSE_AXIS14">
-				<default>0x0E</default>
+				<default>56</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Sense Axis14:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Sense Axis14:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapSenseAxis15" abbrev="COORD_REMAP_SENSE_AXIS15">
-				<default>0x0F</default>
+				<default>60</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Sense Axis15:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Sense Axis15:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapSenseAxis16" abbrev="COORD_REMAP_SENSE_AXIS16">
-				<default>0x10</default>
+				<default>64</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Sense Axis16:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Sense Axis16:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapSenseAxis17" abbrev="COORD_REMAP_SENSE_AXIS17">
-				<default>0x11</default>
+				<default>68</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Sense Axis17:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Sense Axis17:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapSenseAxis18" abbrev="COORD_REMAP_SENSE_AXIS18">
-				<default>0x12</default>
+				<default>72</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Sense Axis18:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Sense Axis18:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapSenseAxis19" abbrev="COORD_REMAP_SENSE_AXIS19">
-				<default>0x13</default>
+				<default>76</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Sense Axis19:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Sense Axis19:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapSenseAxis20" abbrev="COORD_REMAP_SENSE_AXIS20">
-				<default>0x14</default>
+				<default>80</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Sense Axis20:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Sense Axis20:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapSenseAxis21" abbrev="COORD_REMAP_SENSE_AXIS21">
-				<default>0x15</default>
+				<default>84</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Sense Axis21:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Sense Axis21:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapSenseAxis22" abbrev="COORD_REMAP_SENSE_AXIS22">
-				<default>0x16</default>
+				<default>88</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Sense Axis22:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Sense Axis22:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapSenseAxis23" abbrev="COORD_REMAP_SENSE_AXIS23">
-				<default>0x17</default>
+				<default>92</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Sense Axis23:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Sense Axis23:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapSenseAxis24" abbrev="COORD_REMAP_SENSE_AXIS24">
-				<default>0x18</default>
+				<default>96</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Sense Axis24:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Sense Axis24:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapSenseAxis25" abbrev="COORD_REMAP_SENSE_AXIS25">
-				<default>0x19</default>
+				<default>100</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Sense Axis25:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Sense Axis25:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapSenseAxis26" abbrev="COORD_REMAP_SENSE_AXIS26">
-				<default>0x1A</default>
+				<default>104</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Sense Axis26:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Sense Axis26:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapSenseAxis27" abbrev="COORD_REMAP_SENSE_AXIS27">
-				<default>0x1B</default>
+				<default>108</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Sense Axis27:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Sense Axis27:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapSenseAxis28" abbrev="COORD_REMAP_SENSE_AXIS28">
-				<default>0x1C</default>
+				<default>112</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Sense Axis28:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Sense Axis28:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapSenseAxis29" abbrev="COORD_REMAP_SENSE_AXIS29">
-				<default>0x1D</default>
+				<default>116</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Sense Axis29:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Sense Axis29:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapSenseAxis30" abbrev="COORD_REMAP_SENSE_AXIS30">
-				<default>0x1E</default>
+				<default>120</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Sense Axis30:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Sense Axis30:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 			<item type="U1" name="bCoordRemapSenseAxis31" abbrev="COORD_REMAP_SENSE_AXIS31">
-				<default>0x1F</default>
+				<default>124</default>
 				<min>0</min>
 				<max>255</max>
-				<description>Coordinate Remap Sense Axis31:Pin Unit Coordinate.</description>
+				<description>Coordinate Remap Sense Axis31:Pin Unit Coordinate. </description>
+				<unit>-</unit>
+			</item>
+			<item type="U1" name="bCoordRemapSenseAxis32" abbrev="COORD_REMAP_SENSE_AXIS32">
+				<default>128</default>
+				<min>0</min>
+				<max>255</max>
+				<description>Coordinate Remap Sense Axis32:Pin Unit Coordinate. </description>
+				<unit>-</unit>
+			</item>
+			<item type="U1" name="bCoordRemapSenseAxis33" abbrev="COORD_REMAP_SENSE_AXIS33">
+				<default>132</default>
+				<min>0</min>
+				<max>255</max>
+				<description>Coordinate Remap Sense Axis33:Pin Unit Coordinate. </description>
 				<unit>-</unit>
 			</item>
 		</subClass>
