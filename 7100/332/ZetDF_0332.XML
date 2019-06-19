@@ -3923,6 +3923,7 @@
 				<ui group="報點緩衝(Debounce)" groupidx="200" idx="500" name="手指報點 : Debounce Up 防斷線及慣性報點開關" mask="0x03" type="U1" min="0x00" max="0x02" default="0x02" abbrev="FINGER_UP_ENABLE" ns1="ForceTouch">手指報點 : Finger up 防斷線及慣性報點開關 \n 0=關閉 \n 1=防斷線功能開啟(即傳統finger up debounce功能，可透過FINGER_UP_ONE_DEBOUNCE_CNT及FINGER_UP_MUL_DEBOUNCE_CNT設定finger up debounce長度) \n 2=慣性報點開啟，可改善快畫到邊及翻頁問題，開啟此功能時防斷線功能也自動開啟，但finger up debounce長度會被鎖定為0</ui>
 				<!--<ui group="報點緩衝(Debounce)" groupidx="200" idx="499"  name="手指報點 : 慣性報點開關"  mask="0x02" type="U1" min="0" max="1" default="0" abbrev="FINGER_UP_ENABLE" ns1="ForceTouch">手指報點 : 慣性報點開關，需開啟"防斷線開關"才有作用</ui>-->
 				<!--<ui group="報點緩衝(Debounce)" groupidx="200" idx="500"  name="手指報點 : 防斷線開關"  mask="0x01" type="U1" min="0" max="1" default="0" abbrev="FINGER_UP_ENABLE" ns1="ForceTouch">手指報點 : 防斷線開關, 0=關閉 1=開啟</ui>-->
+				<ui group="線性度(Smooth)" groupidx="250" idx="5200" name="加速報點開關" mask="0x20" type="U1" min="0" max="1" default="0" abbrev="FINGER_UP_ENABLE">加速報點開關 \n 0=關閉 \n 1=加速報點功能開啟</ui>
 			</item>
 			<item endian="le" type="U1" name="bDebounceUpCnt" abbrev="FINGER_UP_ONE_DEBOUNCE_CNT">
 				<default>0x01</default>
